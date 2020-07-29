@@ -1,0 +1,33 @@
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <form id="loginForm">
+            <label>Login</label><br/>
+            <input type="text" name="username" id="username"><br/>
+            <label>Password</label><br/>
+            <input type="text" name="mail" id="mail"><br/>
+            <button type="submit">log in</button>
+        </form>
+
+        <div class="messages">
+            <div class="message" style="display:none;">
+                <img src="{{{ user.avatar }}}" alt="">
+                <span>{{ user.username }}</span>
+                <p>{{message}}</p>
+                <span>{{h}}:{{m}}</span>
+            </div>
+        </div>
+
+        <form action="post" id='msgForm'>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea><br/>
+            <button type="submit">envoyer</button>
+        </form>
+        <div class="users" style="display:flex;flex-direction:column;"></div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="http://localhost:8080/socket.io/socket.io.js"></script>
+        <script src="js/client.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>
+    </body>
+</html>
